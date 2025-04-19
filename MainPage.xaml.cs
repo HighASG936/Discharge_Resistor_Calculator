@@ -2,11 +2,13 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
 
         public MainPage()
         {
             InitializeComponent();
+            pickerCapacitance.SelectedIndex = 2;
+            pickerVoltage.SelectedIndex = 2;
+            pickerResistance.SelectedIndex = 1;
         }
 
     }

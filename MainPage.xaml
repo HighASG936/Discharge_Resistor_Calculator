@@ -6,36 +6,22 @@
     <FlexLayout Direction="Column"
                 Margin="10">
 
-
         <!-- Cap Value-->
         <Grid ColumnDefinitions="2.2*, *"
               ColumnSpacing="5"
               Margin="10">
-            <Entry x:Name="Capacitance_editText"
+            <Entry x:Name="entryCapacitance"
+                   Text="10"
                    Grid.Column="0"/>
-            <Picker x:Name="spinner_capacitance"
-                    Title="Cap unit"
+            <Picker x:Name="pickerCapacitance"
                     Grid.Column="1">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
-                        <!-- Values of capacitance -->
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-        </Grid>
-
-        <!-- Resistor Value-->
-        <Grid ColumnDefinitions="2.2*, *"
-              ColumnSpacing="5"
-              Margin="10">
-            <Entry x:Name="Resistance_editText"
-                   Grid.Column="0"/>
-            <Picker x:Name="spinner_resistance"
-                    Title="Res unit"
-                    Grid.Column="1">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <!-- Values of capacitance -->
+                        <x:String>pF</x:String>
+                        <x:String>nF</x:String>
+                        <x:String>uF</x:String>
+                        <x:String>mF</x:String>
+                        <x:String>F</x:String>
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
@@ -45,51 +31,72 @@
         <Grid ColumnDefinitions="2.2*, *"
               ColumnSpacing="5"
               Margin="10">
-            <Entry x:Name="Voltage_editText"
+            <Entry x:Name="entryVoltage"
+                   Text="5"
                    Grid.Column="0"/>
-            <Picker x:Name="spinner_voltage"
-                    Title="Volt unit"
+            <Picker x:Name="pickerVoltage"
                     Grid.Column="1">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
-                        <!-- Values of capacitance -->
+                        <x:String>uV</x:String>
+                        <x:String>mV</x:String>
+                        <x:String>V</x:String>
+                        <x:String>kV</x:String>
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
         </Grid>
 
+        <!-- Resistor Value-->
+        <Grid ColumnDefinitions="2.2*, *"
+              ColumnSpacing="5"
+              IsEnabled="False"
+              Margin="10">
+            <Entry x:Name="entryResistance"
+                   Text="0.0" 
+                   Grid.Column="0"/>
+            <Picker x:Name="pickerResistance"
+                    Grid.Column="1">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Ohms</x:String>
+                        <x:String>kOhms</x:String>
+                        <x:String>MOhms</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </Grid>
 
         <!-- Results-->
-        <Grid RowDefinitions="4*, 4*, 4*, 4*"
-              
+        <Grid RowDefinitions="4*, 4*, 4*, 4*"              
               RowSpacing="5"
               ColumnSpacing="5"
               Margin="10">
-            <Label x:Name="energy_editText"
+            <Label x:Name="labelEnergy"
                    Grid.Row="0"
-                   Text="energy_editText"/>
+                   Text="energyentry"/>
 
-            <Label x:Name="tau_editText"
+            <Label x:Name="labelTau"
                    Grid.Row="1"
-               Text="energy_editText"/>
+               Text="energyentry"/>
 
-            <Label x:Name="power_editText"
+            <Label x:Name="labelPower"
                    Grid.Row="2"
-               Text="power_editText"/>
+               Text="powerentry"/>
 
-            <Label x:Name="tau5_editText"
+            <Label x:Name="labelTau5"
                    Grid.Row="3"
-                   Text="tau5_editText"/>
+                   Text="tau5entry"/>
         </Grid>
 
         <!-- Buttons -->
         <Grid ColumnDefinitions="*, *"
               ColumnSpacing="15"
               Margin="10">
-            <Button x:Name="button_Calculate"
-                    Text="Calulate"
+            <Button x:Name="buttonCalculate"
+                    Text="Calculate"
                     Grid.Column="0"/>
-            <Button x:Name="button_Search"
+            <Button x:Name="buttonSearch"
                     IsEnabled="False"
                     Text="Search"
                     Grid.Column="1"/>
